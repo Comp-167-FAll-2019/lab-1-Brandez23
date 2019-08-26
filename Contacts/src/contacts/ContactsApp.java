@@ -49,7 +49,7 @@ public class ContactsApp extends Application {
                 Contact selectedContact = contacts.get(contactListView.getSelectionModel().getSelectedIndex());
                 
                 Alert alert = new Alert(AlertType.INFORMATION);
-                alert.setTitle(selectedContact.getFirstName() + "'s Contact Details");
+                alert.setTitle(selectedContact.getfirstName + "'s Contact Details");
                 alert.setHeaderText(null);
                 alert.setContentText(selectedContact.toString());
                 
@@ -83,7 +83,7 @@ public class ContactsApp extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        loadContacts(args[1]);
+        loadContacts(args[0]);
         launch(args);
     }
     
@@ -98,7 +98,7 @@ public class ContactsApp extends Application {
                 String[] contactString = contactReader.nextLine().split(",");
                 Contact newContact = new Contact(contactString[0], contactString[1], contactString[2], contactString[3]);
                 contacts.add(newContact);
-                names.add(newContact.getFirstName() + " " + newContact.getLastName());
+                names.add(newContact.getfirstName() + " " + newContact.getlastName()); //Contained a extra "("
             }
         } catch (FileNotFoundException ex) {
             System.err.print("Contact list csv not found");

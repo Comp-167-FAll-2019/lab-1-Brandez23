@@ -14,7 +14,9 @@ public class Contact {
     private String lastName;
     private String phoneNumber;
     private String emailAddress;
-
+    String getfirstName;
+    String getlastName;
+    
     public Contact(String firstName, String lastName, String phoneNumber, String emailAddress) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -22,7 +24,17 @@ public class Contact {
         this.emailAddress = emailAddress;
     }
     
+    @Override //Needed to add override annotation
     public String toString(){
-        return firstName + " " + lastName  " " + phoneNumber + " " + emailAddress;
+        return firstName + " " + lastName +  " " + phoneNumber + " " + emailAddress; //Didn't contain another "+"
     }
+
+    String getfirstName() { //The method getfirstName didnt't exist 
+        return firstName;
+    }
+    
+    String getlastName(){ //The method getfirstName didnt't exist 
+    return lastName;
+    
+}
 }
